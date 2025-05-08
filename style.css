@@ -1,0 +1,184 @@
+/* style.css */
+:root {
+    --bg-color: #0D0D0D;        /* Dark Black */
+    --text-color: #00FF41;      /* Bright Green */
+    --link-color: #FFA500;      /* Amber/Orange for links */
+    --link-hover-color: #FFD700; /* Gold for link hover */
+    --border-color: #333333;    /* Dark Gray for dividers */
+    --cursor-color: var(--text-color);
+    --header-text-color: var(--text-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+header {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: var(--header-text-color);
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px var(--text-color); /* Subtle glow */
+}
+
+nav {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 2px 5px;
+    border: 1px solid transparent;
+}
+
+nav a:hover, nav a:focus {
+    color: var(--link-hover-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--link-color);
+    outline: none;
+}
+
+.theme-selector-container {
+    margin-left: 20px;
+    display: inline-block; /* Keep it on the same line if space allows */
+}
+
+#theme-selector {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--link-color);
+    padding: 3px;
+    font-family: inherit;
+    font-size: 0.9em;
+}
+
+#theme-selector option {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+hr.header-divider, hr.footer-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, var(--border-color), transparent);
+    margin: 15px 0;
+}
+
+main {
+    min-height: calc(100vh - 220px); /* Adjust based on header/footer height */
+}
+
+main h2 {
+    color: var(--header-text-color);
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 5px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+ul.file-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.file-list li {
+    margin-bottom: 8px;
+}
+
+ul.file-list a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+ul.file-list a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+article {
+    padding: 10px;
+    border: 1px dashed var(--border-color);
+    margin-top: 10px;
+    background-color: rgba(0,0,0,0.02); /* very subtle inner bg */
+}
+
+article h1 { /* For post titles */
+    color: var(--header-text-color);
+    text-shadow: 0 0 3px var(--text-color);
+}
+
+pre {
+    background-color: rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    overflow-x: auto; /* For long lines in code/ASCII */
+    white-space: pre-wrap; /* Wrap long lines but preserve formatting */
+    word-wrap: break-word; /* Break words to prevent overflow */
+}
+
+code {
+    background-color: rgba(0,0,0,0.05);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    padding-top: 10px;
+    margin-top: 30px;
+    color: var(--text-color); /* Ensure footer text matches theme */
+}
+
+.cursor {
+    background-color: var(--cursor-color);
+    animation: blink 1s step-end infinite;
+    width: 10px; /* Width of cursor */
+    display: inline-block; /* So it behaves like text but can have a background */
+    opacity: 1;
+}
+
+@keyframes blink {
+    0%, 100% { background-color: var(--cursor-color); opacity: 1; }
+    50% { background-color: transparent; opacity: 0; }
+}
+
+/* Basic responsiveness */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    nav a, .theme-selector-container {
+        display: block;
+        margin-bottom: 8px;
+    }
+    .theme-selector-container {
+        margin-left: 0;
+    }
+}
