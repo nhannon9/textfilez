@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST_TITLE_HERE</title>
+    <!-- Relative path to the CSS file from the 'posts' directory -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Keep the header text and cursor consistent with the main page if desired -->
+            <h1>YOUR_POST_TITLE<span class="cursor">_</span></h1>
+            <nav>
+                <a href="../index.html">[RETURN_TO_ROOT]</a>
+                <!-- You might want a theme selector on post pages too. If so, add it here. -->
+                <!-- Example:
+                <span class="theme-selector-container">
+                    <label for="theme-selector">DISPLAY_MODE:</label>
+                    <select id="theme-selector"></select>
+                </span>
+                -->
+            </nav>
+            <hr class="header-divider">
+        </header>
+
+        <main>
+            <article>
+                <p>> Entry logged: [YYYY-MM-DD]</p>
+                <p>> File: YYYY-MM-DD-your-title.html</p>
+                <hr>
+
+                <p>This is where your main blog post content will go. You can use standard HTML tags like paragraphs, lists, etc.</p>
+                
+                <p>For code blocks or ASCII art, the <code><pre></code> tag is styled to fit the theme:</p>
+                <pre>
+    +------------------------+
+    |   Your ASCII art or    |
+    |      code snippet      |
+    |    can go in here.     |
+    +------------------------+
+
+    function example() {
+        console.log("Hello, retro world!");
+    }
+                </pre>
+
+                <p>Use <code><code></code> for inline code like <code>variable_name</code> or <code>command_line_tool</code>.</p>
+                
+                <p>Feel free to add more sections or structure as needed for your posts.</p>
+            </article>
+        </main>
+
+        <footer>
+            <hr class="footer-divider">
+            <p>EOF. (End Of File)</p>
+        </footer>
+    </div>
+    <!-- Relative path to the JS file. Crucial for theme persistence if the selector is also on this page. -->
+    <!-- If you add the theme selector to this template, uncomment the script line -->
+    <script src="../script.js"></script>
+</body>
+</html>
